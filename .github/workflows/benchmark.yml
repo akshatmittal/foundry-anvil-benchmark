@@ -2,6 +2,9 @@ name: Benchmark
 
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   bench:
     runs-on: ubuntu-latest
