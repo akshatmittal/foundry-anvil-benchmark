@@ -1,1 +1,512 @@
-{}
+{
+  "nightly-ac802618e15039b31e464ae6d1fe3ee39f87cefd": {
+    "tag": "nightly-ac802618e15039b31e464ae6d1fe3ee39f87cefd",
+    "date": "2024-02-24T00:33:46Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 17257.839387,
+      "duration": 2389.570947
+    }
+  },
+  "nightly-6d5de514d2f67d88d088f57f10d28930ced4006e": {
+    "tag": "nightly-6d5de514d2f67d88d088f57f10d28930ced4006e",
+    "date": "2024-02-23T00:34:02Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 98044.95025,
+      "duration": 2436.043344000005
+    }
+  },
+  "nightly-9b73e06e1fe376738b92ae081107620291d50188": {
+    "tag": "nightly-9b73e06e1fe376738b92ae081107620291d50188",
+    "date": "2024-02-22T00:34:25Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 143722.012688,
+      "duration": 2459.8677510000125
+    }
+  },
+  "nightly-2f4b5dbe7f04d974bf99625325200d214089ee66": {
+    "tag": "nightly-2f4b5dbe7f04d974bf99625325200d214089ee66",
+    "date": "2024-02-21T00:34:23Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 160811.48995,
+      "duration": 2534.372003000026
+    }
+  },
+  "nightly-a436a0df05698e76ff4669c562b7374a03b83c11": {
+    "tag": "nightly-a436a0df05698e76ff4669c562b7374a03b83c11",
+    "date": "2024-02-20T00:34:19Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 176594.758115,
+      "duration": 2531.3192740000086
+    }
+  },
+  "nightly-1bb2d67804b5d0a182460d5d6fdb76fadde846c4": {
+    "tag": "nightly-1bb2d67804b5d0a182460d5d6fdb76fadde846c4",
+    "date": "2024-02-19T00:34:58Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 192478.95537,
+      "duration": 2500.509842999978
+    }
+  },
+  "nightly-c631cf37928c4292c3b73a84f337a86281a8db78": {
+    "tag": "nightly-c631cf37928c4292c3b73a84f337a86281a8db78",
+    "date": "2024-02-18T00:35:31Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 238194.9879,
+      "duration": 2385.890462999989
+    }
+  },
+  "nightly-4f00ec6fa1ec0d2787a9d2c4925bf6fc375b58ca": {
+    "tag": "nightly-4f00ec6fa1ec0d2787a9d2c4925bf6fc375b58ca",
+    "date": "2024-02-17T00:34:47Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 283594.943163,
+      "duration": 3534.839332000003
+    }
+  },
+  "nightly-a170021b0e058925047a2c9697ba61f10fc0b2ce": {
+    "tag": "nightly-a170021b0e058925047a2c9697ba61f10fc0b2ce",
+    "date": "2024-02-16T00:34:12Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 300694.014537,
+      "duration": 3483.891791000031
+    }
+  },
+  "nightly-3cdee829b44a3f2b112b4b7f0baa5f721b54cea2": {
+    "tag": "nightly-3cdee829b44a3f2b112b4b7f0baa5f721b54cea2",
+    "date": "2024-02-15T00:34:01Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 317402.68543,
+      "duration": 3494.8711289999774
+    }
+  },
+  "nightly-fd87629fbc4ae2e0fa00ccf42b4a9ebe1b521d55": {
+    "tag": "nightly-fd87629fbc4ae2e0fa00ccf42b4a9ebe1b521d55",
+    "date": "2024-02-14T00:34:32Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 334485.587155,
+      "duration": 3294.213197999983
+    }
+  },
+  "nightly-446bba8893e8673ee373f86af01b14234861baf1": {
+    "tag": "nightly-446bba8893e8673ee373f86af01b14234861baf1",
+    "date": "2024-02-13T23:06:11Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 350911.056716,
+      "duration": 3444.103415999969
+    }
+  },
+  "nightly-b174c3a4f80938636f18b3c9e49d45e6643f64a9": {
+    "tag": "nightly-b174c3a4f80938636f18b3c9e49d45e6643f64a9",
+    "date": "2024-02-09T00:34:59Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 367584.609636,
+      "duration": 3502.1464759999653
+    }
+  },
+  "nightly-a5efe4f8f425e2f6fb35b0e298f0f46acce11dad": {
+    "tag": "nightly-a5efe4f8f425e2f6fb35b0e298f0f46acce11dad",
+    "date": "2024-02-08T00:34:26Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 384126.626755,
+      "duration": 3338.470870000019
+    }
+  },
+  "nightly-2cf84d9f3ba7b6f4a9296299e7036ecc24cfa1da": {
+    "tag": "nightly-2cf84d9f3ba7b6f4a9296299e7036ecc24cfa1da",
+    "date": "2024-02-07T00:35:10Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 400726.197883,
+      "duration": 3486.5947229999583
+    }
+  },
+  "nightly-0688b5ad19a637303c038d1a66aec62a73713e20": {
+    "tag": "nightly-0688b5ad19a637303c038d1a66aec62a73713e20",
+    "date": "2024-02-06T00:34:49Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 417494.308552,
+      "duration": 3398.957497000054
+    }
+  },
+  "nightly-7922fd5482f9561699e0fe5a903c90b3fa1fc50d": {
+    "tag": "nightly-7922fd5482f9561699e0fe5a903c90b3fa1fc50d",
+    "date": "2024-02-05T00:35:29Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 434117.127091,
+      "duration": 3251.267164000019
+    }
+  },
+  "nightly-51ccfdb6444d0f3c89467e6d6aa6be8b52162eed": {
+    "tag": "nightly-51ccfdb6444d0f3c89467e6d6aa6be8b52162eed",
+    "date": "2024-02-04T00:36:27Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 450614.014598,
+      "duration": 3311.986552000046
+    }
+  },
+  "nightly-2cb875799419c907cc3709e586ece2559e6b340e": {
+    "tag": "nightly-2cb875799419c907cc3709e586ece2559e6b340e",
+    "date": "2024-02-03T00:35:00Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 466974.691732,
+      "duration": 3289.712966000021
+    }
+  },
+  "nightly-84d98427e17370ff08ec34f00e3c7e539753a760": {
+    "tag": "nightly-84d98427e17370ff08ec34f00e3c7e539753a760",
+    "date": "2024-02-02T00:34:15Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 483428.994552,
+      "duration": 3359.7084310000064
+    }
+  },
+  "nightly-caef1360e29dfefb1723fa501f425e6f7824bf7f": {
+    "tag": "nightly-caef1360e29dfefb1723fa501f425e6f7824bf7f",
+    "date": "2024-01-29T00:44:54Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 499943.435714,
+      "duration": 3264.8008189999964
+    }
+  },
+  "nightly-4a36f53ac0640b759e7768fedd8c11ef4ec133a0": {
+    "tag": "nightly-4a36f53ac0640b759e7768fedd8c11ef4ec133a0",
+    "date": "2024-01-28T00:48:50Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 531318.960964,
+      "duration": 3363.5492350000422
+    }
+  },
+  "nightly-deb3116955eea4333f9e4e4516104be4182e9ee2": {
+    "tag": "nightly-deb3116955eea4333f9e4e4516104be4182e9ee2",
+    "date": "2024-01-27T00:45:19Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 547721.375474,
+      "duration": 3576.915174999973
+    }
+  },
+  "nightly-c61dc80ce75156d717b968c9f0f882b5d021aa1e": {
+    "tag": "nightly-c61dc80ce75156d717b968c9f0f882b5d021aa1e",
+    "date": "2024-01-26T00:44:24Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 564521.890593,
+      "duration": 3524.882757000043
+    }
+  },
+  "nightly-4a643801d0b3855934cdec778e33e79c79971783": {
+    "tag": "nightly-4a643801d0b3855934cdec778e33e79c79971783",
+    "date": "2024-01-25T00:46:19Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 581139.288676,
+      "duration": 3517.299057000084
+    }
+  },
+  "nightly-3344e2ceeb68fd77d6be001ce7990742debc2e9a": {
+    "tag": "nightly-3344e2ceeb68fd77d6be001ce7990742debc2e9a",
+    "date": "2024-01-24T00:46:21Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 597788.199152,
+      "duration": 3559.7981729999883
+    }
+  },
+  "nightly-f0199f022c2daa2a7aa7d627b60b25ab28b63286": {
+    "tag": "nightly-f0199f022c2daa2a7aa7d627b60b25ab28b63286",
+    "date": "2024-01-23T00:46:14Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 614501.184016,
+      "duration": 3577.2484179999446
+    }
+  },
+  "nightly-5ea2c5e64de91b4e470dee2abee1770ae3f79122": {
+    "tag": "nightly-5ea2c5e64de91b4e470dee2abee1770ae3f79122",
+    "date": "2024-01-22T00:46:08Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 631146.078252,
+      "duration": 3292.761576000019
+    }
+  },
+  "nightly-d0a4452212f54cfe6b6ef03cf4f92c013e38af04": {
+    "tag": "nightly-d0a4452212f54cfe6b6ef03cf4f92c013e38af04",
+    "date": "2024-01-21T00:47:16Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 647569.336592,
+      "duration": 3322.4781580000417
+    }
+  },
+  "nightly-5240bba44efe3620df71da959efd124a50a754aa": {
+    "tag": "nightly-5240bba44efe3620df71da959efd124a50a754aa",
+    "date": "2024-01-20T00:45:33Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 664001.497421,
+      "duration": 3241.358562999987
+    }
+  },
+  "nightly-2335dea2e0d938d769a2b87947e79e02484a8c5a": {
+    "tag": "nightly-2335dea2e0d938d769a2b87947e79e02484a8c5a",
+    "date": "2024-01-19T00:45:56Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 680371.306785,
+      "duration": 3680.208372000023
+    }
+  },
+  "nightly-b51c05734d0bc8879df64d00f536acb7413c84fa": {
+    "tag": "nightly-b51c05734d0bc8879df64d00f536acb7413c84fa",
+    "date": "2024-01-18T00:45:02Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 697388.359783,
+      "duration": 3636.5534960000077
+    }
+  },
+  "nightly-156cb1396b7076c6f9cb56f3719f8c90f7f52064": {
+    "tag": "nightly-156cb1396b7076c6f9cb56f3719f8c90f7f52064",
+    "date": "2024-01-17T00:44:39Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 714207.014814,
+      "duration": 3437.7367239999585
+    }
+  },
+  "nightly-24abca6c9133618e0c355842d2be2dd4f36da46d": {
+    "tag": "nightly-24abca6c9133618e0c355842d2be2dd4f36da46d",
+    "date": "2024-01-16T00:45:19Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 730936.875482,
+      "duration": 3785.717174999998
+    }
+  },
+  "nightly-c5fd67bc85b10d18c9b5d195337d750b9dbbca65": {
+    "tag": "nightly-c5fd67bc85b10d18c9b5d195337d750b9dbbca65",
+    "date": "2024-01-15T00:51:05Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 747866.570658,
+      "duration": 3394.202047000057
+    }
+  },
+  "nightly-293fad73670b7b59ca901c7f2105bf7a29165a90": {
+    "tag": "nightly-293fad73670b7b59ca901c7f2105bf7a29165a90",
+    "date": "2024-01-14T00:47:37Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 764333.761388,
+      "duration": 3314.8886710000224
+    }
+  },
+  "nightly-05d60629f9a9c328763179204772562bea4cef40": {
+    "tag": "nightly-05d60629f9a9c328763179204772562bea4cef40",
+    "date": "2024-01-10T00:45:54Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 780967.429626,
+      "duration": 3331.141537999967
+    }
+  },
+  "nightly-d46bcb3ddc768b35da8d1d29f85886476f974128": {
+    "tag": "nightly-d46bcb3ddc768b35da8d1d29f85886476f974128",
+    "date": "2024-01-09T00:48:36Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 797602.688741,
+      "duration": 3413.2302099999506
+    }
+  },
+  "nightly-02292f2d2caa547968bd039c06dc53d98b72bf39": {
+    "tag": "nightly-02292f2d2caa547968bd039c06dc53d98b72bf39",
+    "date": "2024-01-08T00:45:06Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 814262.237749,
+      "duration": 2380.4930540000787
+    }
+  },
+  "nightly-8343e7d8ac08724238db1c014c325bba479ba587": {
+    "tag": "nightly-8343e7d8ac08724238db1c014c325bba479ba587",
+    "date": "2024-01-07T00:46:26Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 829741.985846,
+      "duration": 2301.853883999982
+    }
+  },
+  "nightly-c7b1c18472059c938de697d4fd72de9938527b48": {
+    "tag": "nightly-c7b1c18472059c938de697d4fd72de9938527b48",
+    "date": "2024-01-06T00:45:34Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 845132.343836,
+      "duration": 2370.4443830000237
+    }
+  },
+  "nightly-6fc74638b797b8e109452d3df8e26758f86f31fe": {
+    "tag": "nightly-6fc74638b797b8e109452d3df8e26758f86f31fe",
+    "date": "2024-01-05T00:44:59Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 860562.351713,
+      "duration": 2315.217827000073
+    }
+  },
+  "nightly-9e3ab9b3aff21c6e5ef8b7290df1ad079a24ab6e": {
+    "tag": "nightly-9e3ab9b3aff21c6e5ef8b7290df1ad079a24ab6e",
+    "date": "2024-01-04T00:46:05Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 876040.553639,
+      "duration": 2505.1461959999288
+    }
+  },
+  "nightly-0f20cc609b04b9b086122d85e0994c820105a47c": {
+    "tag": "nightly-0f20cc609b04b9b086122d85e0994c820105a47c",
+    "date": "2024-01-03T00:45:50Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 891770.952655,
+      "duration": 2445.6880289999535
+    }
+  },
+  "nightly-2bcb4a1aded22c7f5c1263462acb6c75409dabeb": {
+    "tag": "nightly-2bcb4a1aded22c7f5c1263462acb6c75409dabeb",
+    "date": "2024-01-02T00:44:47Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 907329.151873,
+      "duration": 2494.7177890000166
+    }
+  },
+  "nightly-6d7cceafdcbdb5e48c128a5b32cb7267498f4674": {
+    "tag": "nightly-6d7cceafdcbdb5e48c128a5b32cb7267498f4674",
+    "date": "2023-12-31T00:46:53Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 922969.132299,
+      "duration": 2672.6716729999753
+    }
+  },
+  "nightly-67ab8704476d55e47545cf6217e236553c427a80": {
+    "tag": "nightly-67ab8704476d55e47545cf6217e236553c427a80",
+    "date": "2023-12-29T00:42:59Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 938951.728014,
+      "duration": 2651.3246420000214
+    }
+  },
+  "nightly-a5171a4a08353a916f429fb9c9ef8aeeb9778d5b": {
+    "tag": "nightly-a5171a4a08353a916f429fb9c9ef8aeeb9778d5b",
+    "date": "2023-12-24T00:46:24Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 954854.133695,
+      "duration": 2421.8574410000583
+    }
+  },
+  "nightly-c312c0da8eea81515f35cb12d106314cd737d170": {
+    "tag": "nightly-c312c0da8eea81515f35cb12d106314cd737d170",
+    "date": "2023-12-22T00:45:38Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 970500.624728,
+      "duration": 2544.1320399999386
+    }
+  },
+  "nightly-df49ddda8591c666d6b32dc0696db727a0eaa65d": {
+    "tag": "nightly-df49ddda8591c666d6b32dc0696db727a0eaa65d",
+    "date": "2023-12-21T00:45:13Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 986156.372395,
+      "duration": 2505.7163670000155
+    }
+  },
+  "nightly-eb2141c6b756e06437b837294d6fa485cb3916ef": {
+    "tag": "nightly-eb2141c6b756e06437b837294d6fa485cb3916ef",
+    "date": "2023-12-20T00:42:17Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 1001739.439981,
+      "duration": 2478.3548810000066
+    }
+  }
+}
