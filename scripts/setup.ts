@@ -5,6 +5,8 @@ import fs from "fs/promises";
 const FOUNDRY_ORG = "foundry-rs";
 const FOUNDRY_PACKAGE = "foundry";
 
+$.verbose = false;
+
 async function main() {
   const dockerComposeTemplate = await fs.readFile("./compose.template.yml", "utf-8");
 
@@ -35,14 +37,7 @@ async function main() {
     return e.flat();
   });
 
-  let processedVersions = 0;
-
   for (const version of taggedVersions) {
-    if (processedVersions > 50) {
-      // We only wanna do ~50 versions at a time.
-      break;
-    }
-
     if (version.metadata.container.tags.length > 0) {
       const versionTag = version.metadata.container.tags.find((e: any) => e.startsWith("nightly-"));
 
@@ -56,12 +51,12 @@ async function main() {
         }
 
         console.log("Starting docker with:", versionTag);
-        console.log("Local Run ID:", processedVersions);
         await fs.rm("./compose.yml", { force: true });
         await fs.writeFile("./compose.yml", dockerComposeTemplate.replace("$$$VERSION_TAG$$$", versionTag));
         await $`docker compose -f compose.yml up -d`;
 
-        await sleep("10s"); // Just wait 10s for the container to stabilize
+        console.log("Waiting for container to stabilize...");
+        await sleep("7s"); // Just wait a bit for the container to stabilize
 
         console.log("Starting benchmark with:", versionTag);
         performance.mark("bench-start");
@@ -82,7 +77,6 @@ async function main() {
         console.log("Benchmark Complete:", versionObject[versionTag]);
 
         await fs.writeFile("./data/processedVersions.json", JSON.stringify(versionObject, null, 2));
-        processedVersions += 1;
       }
     }
   }
