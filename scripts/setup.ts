@@ -21,19 +21,18 @@ async function main() {
     },
   });
 
-  // Last 200 versions.
-  const taggedVersions: any = await Promise.all([
-    await gh
-      .get(
-        `https://api.github.com/orgs/${FOUNDRY_ORG}/packages/container/${FOUNDRY_PACKAGE}/versions?per_page=100&page=1`,
-      )
-      .json(),
-    await gh
-      .get(
-        `https://api.github.com/orgs/${FOUNDRY_ORG}/packages/container/${FOUNDRY_PACKAGE}/versions?per_page=100&page=2`,
-      )
-      .json(),
-  ]).then((e) => {
+  const taggedVersions: any = await Promise.all(
+    new Array(8)
+      .fill(0)
+      .map((_, i) => i + 1)
+      .map((e) =>
+        gh
+          .get(
+            `https://api.github.com/orgs/${FOUNDRY_ORG}/packages/container/${FOUNDRY_PACKAGE}/versions?per_page=100&page=${e}`,
+          )
+          .json(),
+      ),
+  ).then((e) => {
     return e.flat();
   });
 
@@ -51,7 +50,7 @@ async function main() {
         }
 
         console.log("Starting docker with:", versionTag);
-        await fs.rm("./compose.yml", { force: true });
+
         await fs.writeFile("./compose.yml", dockerComposeTemplate.replace("$$$VERSION_TAG$$$", versionTag));
         await $`docker compose -f compose.yml up -d`;
 
@@ -63,19 +62,18 @@ async function main() {
         await $`yarn benchmark`;
         performance.mark("bench-end");
 
-        const perfData = performance.measure("bench", "bench-start", "bench-end");
-        console.log(perfData);
+        versionObject[versionTag] = {
+          tag: versionTag,
+          date: version.created_at,
+          perf: performance.measure("bench", "bench-start", "bench-end"),
+        };
+
+        console.log("Benchmark Complete:", versionObject[versionTag]);
 
         await $`docker stop $(docker ps -aq) || docker rm -f $(docker ps -aq)`;
         await $`docker system prune -a --volumes -f`;
 
-        versionObject[versionTag] = {
-          tag: versionTag,
-          date: version.created_at,
-          perf: perfData,
-        };
-        console.log("Benchmark Complete:", versionObject[versionTag]);
-
+        await fs.rm("./compose.yml", { force: true });
         await fs.writeFile("./data/processedVersions.json", JSON.stringify(versionObject, null, 2));
       }
     }
