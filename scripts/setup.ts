@@ -39,7 +39,7 @@ async function main() {
 
   for (const version of taggedVersions) {
     if (processedVersions > 50) {
-      // We only wanna do up to 50 versions at a time.
+      // We only wanna do ~50 versions at a time.
       break;
     }
 
@@ -56,6 +56,7 @@ async function main() {
         }
 
         console.log("Starting docker with:", versionTag);
+        console.log("Local Run ID:", processedVersions);
         await fs.rm("./compose.yml", { force: true });
         await fs.writeFile("./compose.yml", dockerComposeTemplate.replace("$$$VERSION_TAG$$$", versionTag));
         await $`docker compose -f compose.yml up -d`;

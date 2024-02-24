@@ -29,7 +29,7 @@ jobs:
 
       - name: "Upload Benchmark Results"
         run: |
-          git config --global user.name 'Benchmark Runner'
-          git config --global user.email 'akshatmittal@users.noreply.github.com'
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git commit -am "Benchmark Data"
           git push
