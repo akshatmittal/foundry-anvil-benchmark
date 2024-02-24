@@ -1,0 +1,35 @@
+name: Benchmark
+
+on: [push]
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: "Package Versions"
+        run: |
+          docker --version
+          node --version
+          yarn --version
+
+      - name: "Install Dependencies"
+        run: "yarn"
+
+      - name: "Run Benchmark"
+        run: "yarn benchmark"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Upload Benchmark Results"
+        run: |
+          git config --global user.name 'Benchmark Runner'
+          git config --global user.email 'akshatmittal@users.noreply.github.com'
+          git commit -am "Benchmark Data"
+          git push

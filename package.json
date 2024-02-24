@@ -1,0 +1,17 @@
+{
+  "name": "foundry-anvil-benchmark",
+  "packageManager": "yarn@4.1.0",
+  "dependencies": {
+    "ky": "^1.2.0",
+    "tsx": "^4.7.1",
+    "viem": "^2.7.13",
+    "zx": "^7.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20"
+  },
+  "scripts": {
+    "benchmark": "tsx scripts/benchmark.ts",
+    "start": "tsx scripts/setup.ts"
+  }
+}

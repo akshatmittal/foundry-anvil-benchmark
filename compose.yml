@@ -1,0 +1,14 @@
+version: "3"
+name: bench
+
+services:
+  anvil:
+    image: ghcr.io/foundry-rs/foundry:nightly-1bb2d67804b5d0a182460d5d6fdb76fadde846c4
+    command:
+      [
+        "anvil --fork-url https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161 --chain-id 1 --no-rate-limit --fork-block-number 19280000",
+      ]
+    environment:
+      ANVIL_IP_ADDR: "0.0.0.0"
+    ports:
+      - "8545:8545"
