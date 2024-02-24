@@ -41,6 +41,8 @@ export async function runTests() {
       blockNumber: 16681681n,
     })
     .catch((e) => {
+      // TODO: This is actually a bad test, replace with rpc spec validation.
+
       // This call is expected to revert, but NOT with an internal error.
       testResults.case1 = {
         passed: !e.message.includes("Required data unavailable"),
