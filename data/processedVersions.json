@@ -1,1 +1,15 @@
-{}
+{
+  "nightly-ac802618e15039b31e464ae6d1fe3ee39f87cefd": {
+    "tag": "nightly-ac802618e15039b31e464ae6d1fe3ee39f87cefd",
+    "date": "2024-02-24T00:33:46Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 20183.7552,
+      "duration": 14462.6794
+    },
+    "testingResults": {
+      "case1": false
+    }
+  }
+}

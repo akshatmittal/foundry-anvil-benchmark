@@ -2,6 +2,8 @@ import { $, sleep } from "zx";
 import ky from "ky";
 import fs from "fs/promises";
 
+import { runTests } from "./test";
+
 const FOUNDRY_ORG = "foundry-rs";
 const FOUNDRY_PACKAGE = "foundry";
 
@@ -36,9 +38,20 @@ async function main() {
     return e.flat();
   });
 
+  console.log("First Date:", taggedVersions[0].created_at);
+  console.log("Last Date:", taggedVersions[taggedVersions.length - 1].created_at);
+
+  let processedEntries = 0;
+
   for (const version of taggedVersions) {
     if (version.metadata.container.tags.length > 0) {
       const versionTag = version.metadata.container.tags.find((e: any) => e.startsWith("nightly-"));
+
+      if (new Date(version.created_at) < new Date("2023-05-01T00:00:00Z")) {
+        console.log("I guess we're done!");
+
+        break;
+      }
 
       if (versionTag) {
         const versionObject = await fs.readFile("./data/processedVersions.json", "utf-8").then((e) => JSON.parse(e));
@@ -62,10 +75,14 @@ async function main() {
         await $`yarn benchmark`;
         performance.mark("bench-end");
 
+        // Tests are NOT a part of the benchmark.
+        const testingResults = await runTests();
+
         versionObject[versionTag] = {
           tag: versionTag,
           date: version.created_at,
           perf: performance.measure("bench", "bench-start", "bench-end"),
+          testingResults,
         };
 
         console.log("Benchmark Complete:", versionObject[versionTag]);
@@ -75,9 +92,13 @@ async function main() {
 
         await fs.rm("./compose.yml", { force: true });
         await fs.writeFile("./data/processedVersions.json", JSON.stringify(versionObject, null, 2));
+
+        processedEntries += 1;
       }
     }
   }
+
+  console.log("Total Entries Processed:", processedEntries);
 }
 
 main().catch((error) => {
