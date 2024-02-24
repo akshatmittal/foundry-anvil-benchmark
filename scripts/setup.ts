@@ -54,46 +54,51 @@ async function main() {
       }
 
       if (versionTag) {
-        const versionObject = await fs.readFile("./data/processedVersions.json", "utf-8").then((e) => JSON.parse(e));
+        try {
+          const versionObject = await fs.readFile("./data/processedVersions.json", "utf-8").then((e) => JSON.parse(e));
 
-        if (versionObject[versionTag]) {
-          console.log("Skipping:", versionTag);
+          if (versionObject[versionTag]) {
+            console.log("Skipping:", versionTag);
 
-          continue;
+            continue;
+          }
+
+          console.log("Starting docker with:", versionTag);
+
+          await fs.writeFile("./compose.yml", dockerComposeTemplate.replace("$$$VERSION_TAG$$$", versionTag));
+          await $`docker compose -f compose.yml up -d`;
+
+          console.log("Waiting for container to stabilize...");
+          await sleep("7s"); // Just wait a bit for the container to stabilize
+
+          console.log("Starting benchmark with:", versionTag);
+          performance.mark("bench-start");
+          await $`yarn benchmark`;
+          performance.mark("bench-end");
+
+          // Tests are NOT a part of the benchmark.
+          const testingResults = await runTests();
+
+          versionObject[versionTag] = {
+            tag: versionTag,
+            date: version.created_at,
+            perf: performance.measure("bench", "bench-start", "bench-end"),
+            testingResults,
+          };
+
+          console.log("Benchmark Complete:", versionObject[versionTag]);
+
+          await $`docker stop $(docker ps -aq) || docker rm -f $(docker ps -aq)`;
+          await $`docker system prune -a --volumes -f`;
+
+          await fs.rm("./compose.yml", { force: true });
+          await fs.writeFile("./data/processedVersions.json", JSON.stringify(versionObject, null, 2));
+
+          processedEntries += 1;
+        } catch (error) {
+          console.error("Error:", error);
+          console.error("Skipping (Error):", versionTag);
         }
-
-        console.log("Starting docker with:", versionTag);
-
-        await fs.writeFile("./compose.yml", dockerComposeTemplate.replace("$$$VERSION_TAG$$$", versionTag));
-        await $`docker compose -f compose.yml up -d`;
-
-        console.log("Waiting for container to stabilize...");
-        await sleep("7s"); // Just wait a bit for the container to stabilize
-
-        console.log("Starting benchmark with:", versionTag);
-        performance.mark("bench-start");
-        await $`yarn benchmark`;
-        performance.mark("bench-end");
-
-        // Tests are NOT a part of the benchmark.
-        const testingResults = await runTests();
-
-        versionObject[versionTag] = {
-          tag: versionTag,
-          date: version.created_at,
-          perf: performance.measure("bench", "bench-start", "bench-end"),
-          testingResults,
-        };
-
-        console.log("Benchmark Complete:", versionObject[versionTag]);
-
-        await $`docker stop $(docker ps -aq) || docker rm -f $(docker ps -aq)`;
-        await $`docker system prune -a --volumes -f`;
-
-        await fs.rm("./compose.yml", { force: true });
-        await fs.writeFile("./data/processedVersions.json", JSON.stringify(versionObject, null, 2));
-
-        processedEntries += 1;
       }
     }
   }

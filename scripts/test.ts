@@ -1,4 +1,4 @@
-import { Chain, ContractFunctionExecutionError, createTestClient, http, publicActions, walletActions } from "viem";
+import { Chain, createTestClient, http, publicActions, walletActions } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { hardhat } from "viem/chains";
 
@@ -18,9 +18,7 @@ export async function runTests() {
     .extend(publicActions)
     .extend(walletActions);
 
-  const testResults = {
-    case1: true,
-  };
+  const testResults: any = {};
 
   /*
    ** Test 1: This random bug.
@@ -43,11 +41,10 @@ export async function runTests() {
       blockNumber: 16681681n,
     })
     .catch((e) => {
-      // console.log(e instanceof CallExecutionError); // bad
-      // console.log(e instanceof ContractFunctionExecutionError); // good
-
       // This call is expected to revert, but NOT with an internal error.
-      testResults.case1 = e instanceof ContractFunctionExecutionError;
+      testResults.case1 = {
+        passed: !e.message.includes("Required data unavailable"),
+      };
     });
 
   console.log("Tests Complete:", testResults);
