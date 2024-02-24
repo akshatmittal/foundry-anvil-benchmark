@@ -23,7 +23,7 @@ jobs:
         run: "yarn"
 
       - name: "Run Benchmark"
-        run: "yarn benchmark"
+        run: "yarn start"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
