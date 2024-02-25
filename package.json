@@ -13,6 +13,7 @@
   "scripts": {
     "benchmark": "tsx scripts/benchmark.ts",
     "start": "tsx scripts/setup.ts",
-    "transform": "tsx scripts/transform.ts"
+    "transform": "tsx scripts/transform.ts",
+    "test": "tsx scripts/test.ts"
   }
 }

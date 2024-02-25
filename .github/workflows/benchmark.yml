@@ -5,12 +5,9 @@ on:
     inputs:
       cleanup:
         description: "Fresh start?"
-        type: choice
+        type: boolean
         required: true
-        default: "no"
-        options:
-          - no
-          - yes
+        default: false
 
 permissions:
   contents: write
@@ -27,7 +24,7 @@ jobs:
           node-version: "20.x"
 
       - name: "Cleanup"
-        if: ${{ inputs.cleanup }} == "yes"
+        if: ${{ inputs.cleanup }}
         run: |
           rm -rf ./data/processedVersions.json
           echo "{}" > ./data/processedVersions.json
