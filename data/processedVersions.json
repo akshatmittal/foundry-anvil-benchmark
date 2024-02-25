@@ -3538,5 +3538,20 @@
         "passed": true
       }
     }
+  },
+  "nightly-43b4e23252b00a871923fb0acff3550519af0e68": {
+    "tag": "nightly-43b4e23252b00a871923fb0acff3550519af0e68",
+    "date": "2024-02-25T00:36:20Z",
+    "perf": {
+      "name": "bench",
+      "entryType": "measure",
+      "startTime": 14019.696406,
+      "duration": 1679.838479
+    },
+    "testingResults": {
+      "case1": {
+        "passed": true
+      }
+    }
   }
 }
