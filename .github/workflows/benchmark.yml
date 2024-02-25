@@ -27,7 +27,6 @@ jobs:
         if: ${{ inputs.cleanup }}
         run: |
           rm -rf ./data/processedVersions.json
-          echo "{}" > ./data/processedVersions.json
 
       - name: "Package Versions"
         run: |

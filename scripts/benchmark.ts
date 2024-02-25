@@ -5,18 +5,16 @@ import { hardhat } from "viem/chains";
 import { ForkedOracleArtifact } from "../artifacts/ForkedOracle";
 import { encodedCalldata2, encodedCalldata1 } from "../artifacts/DeploymentTx";
 
-const customChain = {
-  ...hardhat,
-  id: 1,
-} as const satisfies Chain;
-
-async function main() {
+export async function runBenchmark() {
   console.log("Starting benchmark...");
   const client = createTestClient({
     mode: "anvil",
     transport: http("http://localhost:8545"),
     account: privateKeyToAccount("0x0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"),
-    chain: customChain,
+    chain: {
+      ...hardhat,
+      id: 1,
+    } as const satisfies Chain,
   })
     .extend(publicActions)
     .extend(walletActions);
@@ -67,7 +65,7 @@ async function main() {
   }); // ~4.1m gas
 
   /*
-   ** Task 3: Interact with the same contracts in Task 2
+   ** Task 3: Interact with the same contracts as in Task 2
    */
   console.log("Task 3...");
   await client.sendTransaction({
@@ -78,9 +76,3 @@ async function main() {
 
   console.log("Tasks Complete.");
 }
-
-main().catch((error) => {
-  console.error(error);
-
-  process.exitCode = 1;
-});

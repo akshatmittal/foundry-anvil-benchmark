@@ -3,9 +3,12 @@ import ky from "ky";
 import fs from "fs/promises";
 
 import { runTests } from "./test";
+import { runBenchmark } from "./benchmark";
 
 const FOUNDRY_ORG = "foundry-rs";
 const FOUNDRY_PACKAGE = "foundry";
+
+const DATA_FILE = "./data/processedVersions.json";
 
 $.verbose = false;
 
@@ -41,6 +44,8 @@ async function main() {
   console.log("First Date:", taggedVersions[0].created_at);
   console.log("Last Date:", taggedVersions[taggedVersions.length - 1].created_at);
 
+  await fs.access(DATA_FILE, fs.constants.F_OK).catch(() => fs.writeFile(DATA_FILE, "{}"));
+
   let processedEntries = 0;
 
   for (const version of taggedVersions) {
@@ -55,7 +60,7 @@ async function main() {
 
       if (versionTag) {
         try {
-          const versionObject = await fs.readFile("./data/processedVersions.json", "utf-8").then((e) => JSON.parse(e));
+          const versionObject = await fs.readFile(DATA_FILE, "utf-8").then((e) => JSON.parse(e));
 
           if (versionObject[versionTag]) {
             console.log("Skipping:", versionTag);
@@ -73,7 +78,7 @@ async function main() {
 
           console.log("Starting benchmark with:", versionTag);
           performance.mark("bench-start");
-          await $`yarn benchmark`;
+          await runBenchmark();
           performance.mark("bench-end");
 
           // Tests are NOT a part of the benchmark.
@@ -92,13 +97,15 @@ async function main() {
           await $`docker system prune -a --volumes -f`;
 
           await fs.rm("./compose.yml", { force: true });
-          await fs.writeFile("./data/processedVersions.json", JSON.stringify(versionObject, null, 2));
+          await fs.writeFile(DATA_FILE, JSON.stringify(versionObject, null, 2));
 
           processedEntries += 1;
         } catch (error) {
           console.error("Error:", error);
           console.error("Skipping (Error):", versionTag);
         }
+
+        break;
       }
     }
   }
