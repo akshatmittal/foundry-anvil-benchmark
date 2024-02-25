@@ -104,8 +104,6 @@ async function main() {
           console.error("Error:", error);
           console.error("Skipping (Error):", versionTag);
         }
-
-        break;
       }
     }
   }
